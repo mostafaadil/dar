@@ -13,7 +13,14 @@ return [
 'arabic'=> 'arabic ',
 'english'=> 'english ',
 
-'lang'=> 'language'
+'lang'=> 'language',
+
+'copy'=>'copyright. designed and developed by ',
+'logiciel'=>'logiciel',
+'new'=>'latest add ',
+'edit'=>' edit',
+'delete'=>' delete',
+
 
 ];
 ?>

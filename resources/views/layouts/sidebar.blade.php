@@ -165,11 +165,26 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
+              <li class="nav-item" id="">
+                <a href="#" class="nav-link">
+                <span class="badge badge-info right">2</span>
+                  <p>جهات الاتصالات </p>
+                </a>
+
+                <ul class="nav nav-treeview">
               <li class="nav-item" id="contacts">
                 <a href="#" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>جهات الاتصالات </p>
+                  <p> جديد  </p>
                 </a>
+              </li>
+              <li class="nav-item" id="edit-con">
+                <a href="#"  class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p> عرض جهات الاتصال   </p>
+                </a>
+              </li>
+            </ul>
               </li>
               <li class="nav-item">
                 <a href="pages/layout/boxed.html" class="nav-link">

@@ -16,6 +16,22 @@ class ContactsController extends Controller
     public function index()
     {
         //
+
+       // return "dgfgdxgf";
+        $app=Contacts::all();
+
+        return view('admin.contacts.list',compact('app'));
+
+    }
+    public function index2()
+    {
+        //
+
+       // return "dgfgdxgf";
+        $app=Contacts::all();
+
+        return view('admin.contacts.list',compact('app'));
+
     }
 
     /**
@@ -41,7 +57,7 @@ class ContactsController extends Controller
          $saveContant=new Contacts;
          $saveContant->phone_number=request('phone_number');
          $saveContant->save();
-
+          return redirect('home');
     }
 
     /**
@@ -61,9 +77,13 @@ class ContactsController extends Controller
      * @param Contacts $contacts
      * @return Response
      */
-    public function edit(Contacts $contacts)
+    public function edit(Contacts $contacts,$id)
     {
-        //
+        //       
+        $user = Contacts::where('id', $id)->first();
+        return json_encode($user);
+
+
     }
 
     /**
@@ -76,6 +96,12 @@ class ContactsController extends Controller
     public function update(Request $request, Contacts $contacts)
     {
         //
+        $editid = $request->input('id');
+
+        $data = array('phone_number' => $request->input('phone_number'));
+        $user = Contacts::where('id',$editid)->update($data);
+        return json_encode('تم التعديل');
+     
     }
 
     /**

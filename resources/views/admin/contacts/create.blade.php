@@ -8,7 +8,7 @@
                                 <div class="py-4 px-6">
                                     <div class="text-center font-bold text-gray-700 text-3xl">جهات الاتصال</div>
                                     <div class="mt-1 text-center font-bold text-gray-600 text-xl">إاضافة جهة اتصال جديدة</div>
-                                    <form method="post" action="store" enctype="multipart/form-data">
+                                    <form method="post" action="contact/store" enctype="multipart/form-data">
                                         {{csrf_field()}}
 
 

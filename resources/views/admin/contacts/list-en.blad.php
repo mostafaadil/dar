@@ -12,20 +12,20 @@
       </div>
     </form>
     <div>
-    @if(app()->getLocale()=='en')
+    @if(app()->getLocale()=='ar')
 
-<table class="table table-bordered table-striped dataTable"  role="grid" aria-describedby="example1_info" id="laravel_crud">
-   @endif
+     <table class="table table-bordered table-striped dataTable"  role="grid" aria-describedby="example1_info" id="laravel_crud">
+        @endif
 
-   @if(app()->getLocale()=='ar')
+        @if(app()->getLocale()=='ar')
 
-   <table class="table table-bordered table-striped dataTable" dir="rtl" role="grid" aria-describedby="example1_info" id="laravel_crud">
+<table class="table table-bordered table-striped dataTable" dir="rtl" role="grid" aria-describedby="example1_info" id="laravel_crud">
    @endif
             <thead>
             <tr>
-                <td class="text regular">number</td>
-                <td class="regular text">  phone number </td>
-                <td class="regular text"></td>
+                <td class="text regular">الرقم</td>
+                <td class="regular text">نوع تصنيف المنتج</td>
+                <td class="regular text">عمليات</td>
             </tr>
             </thead>
             <tbody id="users-crud" {{$counter=1}}>
@@ -52,6 +52,7 @@
            <div class="modal-content">
             <div class="card card-info">
               <div class="card-header">
+                <h4 class="card-title">Input Addon</h3>
 
                 <button id="close" type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>

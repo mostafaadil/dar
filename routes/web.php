@@ -30,6 +30,7 @@ Route::get('/pricing','CarsController@pricing');
 
 
 
+Route::get('/get-image','websiteController@getImages');
 
 
 
@@ -42,21 +43,21 @@ Route::get('/edit/{id}','CarsController@edit');
 Route::post('cars/update','CarsController@update');
 Route::get('/car-book','CarsController@index');
 
-
-Route::get('contact/create','ContactsController@create');
-Route::post('contact/store','ContactsController@store');
-Route::get('/contact','ContactsController@show');
-Route::get('/contact/delete/{id}','ContactsController@destroy');
-Route::get('/contact/{id}','ContactsController@edit');
-Route::post('contact/update','ContactsController@update');
 Route::get('/index','websiteController@index');
+
+
 
 
 Route::get('contact/create','ContactsController@create');
 Route::post('/order','OerdersController@store');
+
+Route::get('okx','ContactsController@index');
+Route::get('okx2','ContactsController@index2');
+
+
 Route::get('/contact','ContactsController@show');
 Route::get('/contact/delete/{id}','ContactsController@destroy');
-Route::get('/order/{id}','OerdersController@edit');
+Route::get('/contact/{id}','ContactsController@edit');
 Route::post('contact/update','ContactsController@update');
 Route::get('/show-orders','OerdersController@index');
 

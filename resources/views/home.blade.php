@@ -207,6 +207,16 @@
 
     });
 
+    $('#edit-con').click(function () {
+        $.get('/okx', function (data) {
+
+            $("#card").html(data);
+
+        });
+
+    });
+
+
 
     $('#ed-calss').click(function () {
         $.get('/edation-pro-classification', function (data) {

@@ -42,17 +42,24 @@ class websiteController extends Controller
 
         }
 
-        $pro=Product::all();
+        $pro=Product::orderBy('id', 'desc')->take(4)->get();
 
         $dogs = Product::orderBy('id', 'desc')->take(5)->get();
 
         
       //  return json_encode($pro);
 
-     //  dd($pro);
-    
+      // dd($pro->imge_);
+      $last=Product::orderBy('id')->take(3)->get();
 
-        return view('furn.index',compact('pro','dataArray','dogs','contets'));
+
+        return view('furn.index',compact('pro','dataArray','dogs','contets','last'));
+    }
+
+    public function getImages(){
+        $pro=Product::orderBy('id')->take(2)->get();
+        return json_encode($pro);
+
     }
 
     /**
