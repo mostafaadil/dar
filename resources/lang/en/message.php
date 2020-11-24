@@ -7,7 +7,13 @@ return [
 
 'accounts'=> ' accounts',
 
-'categories'=> ' categories  '
+'categories'=> ' categories  ',
+
+ 
+'arabic'=> 'arabic ',
+'english'=> 'english ',
+
+'lang'=> 'language'
 
 ];
 ?>

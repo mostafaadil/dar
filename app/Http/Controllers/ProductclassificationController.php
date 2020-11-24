@@ -18,11 +18,17 @@ class ProductclassificationController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function inlinePro()
+    public function inlineProen()
     {
 
-        return view('inline.new-classfcation');
+        return view('inline.new-classfcation-en');
     }
+    public function inlineProar()
+    {
+
+        return view('inline.new-classfcation-ar');
+    }
+    
 
 
     public function getRecord(Request $request, $from, $to)
@@ -136,13 +142,23 @@ class ProductclassificationController extends Controller
      * @param \App\productclassification $productclassification
      * @return \Illuminate\Http\Response
      */
+    
+    public function editDeleteen()
+    {
+
+
+        $clas = Productclassification::all();
+
+        return view('edit-delete-pro-classification-en', compact('clas'));
+
+    }
     public function editDelete()
     {
 
 
         $clas = Productclassification::all();
 
-        return view('dashbord.edit-delete-pro-classification', compact('clas'));
+        return view('edit-delete-pro-classification', compact('clas'));
 
     }
 
@@ -345,7 +361,7 @@ class ProductclassificationController extends Controller
 
         $user_id = $request->input('id');
         $calssfcation_type = $request->input('calssfcation_type');
-        $data = array('calssfcation_type' => $calssfcation_type);
+        $data = array('calssfcation_type_english' =>$request->input('calssfcation_type_english') ,'calssfcation_type_arabic'=>$request->input('calssfcation_type_arabic') );
         // Call updateData() method of Page Model
         $user = Productclassification::where('id', $user_id)->update($data);
         return json_encode('تم التعديل');

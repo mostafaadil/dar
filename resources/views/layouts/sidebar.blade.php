@@ -34,222 +34,199 @@
 <!-- Google Font: Source Sans Pro -->
 </head>
 
-<aside class="main-sidebar sidebar-dark-primary" style="direction:rlt;left: auto;
-    right: 0;">
+<aside class="main-sidebar sidebar-dark-primary elevation-4 " style="direction:rlt;left: auto;
+    right: 0; " >
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
-        <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
-             style="opacity: .8">
-        <span class="brand-text font-weight-light">smart stok
-</span>
-
+      <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light">لوحة تحكم موقع دار الصائغ </span>
     </a>
 
-<div class="sidebar" dir="rtl">
-    <!-- Sidebar user panel (optional) -->
-    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-            <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
+          <a href="#" class="d-block">{{ Auth::user()->name }} </a>
         </div>
-    </div>
-    <!-- Sidebar Menu -->
-    <nav class="mt-2" dir="rtl">
+      </div>
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-            <li class="nav-item has-treeview" style="margin-left:30% ;font-size: medium">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item has-treeview menu-open">
+            <a href="#" class="nav-link active">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                عمليات لوحة التحكم الرئيسية 
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+            
+            <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+     المنتجات
+                <i class="fas fa-angle-left right"></i>
+                <span class="badge badge-info right">2</span>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item" id="pro-ar">
                 <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-copy" ></i>
-                    <p >المنتجات<i class="fas fa-angle-left right"></i>
-                    </p>
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>جديد  </p>
                 </a>
-                <ul class="nav nav-treeview">
-                    <li class="nav-item" dir="rtl" id="pro">
-                        <div id="external-events">
-                            <div class="external-event bg-success ui-draggable ui-draggable-handle" style="position: relative;">
-                                <a href="#" class="" style='font-size:small;'></i>جديد </a>
-                            </div></a>
-                    <li class="nav-item" id="ed-pro">
-                        <a href="#" class="nav-link">
-                            <div class="external-event bg-warning ui-draggable ui-draggable-handle"  style='font-size:small'>
-                                <p>تعديل/حذف منتج</p>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-            <li class="nav-item has-treeview" style="margin-left:35%">
+              </li>
+              <li class="nav-item" id="ed-pro">
                 <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-copy"></i>
-                    <p>الوارد <i class="fas fa-angle-left right"></i>
-                    </p>
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>عرض المنتجات  </p>
                 </a>
-                <ul class="nav nav-treeview">
-                    <li class="nav-item" dir="rtl" id="income">
-                        <div id="external-events">
-                            <div class="external-event bg-success ui-draggable ui-draggable-handle" style="position: relative;">
-                                <i></i><a href="#" class="" style='font-size:small'></a></i>جديد
-                            </div>
-                        </div>
-                    </li>
-                    <li class="nav-item" id="ed-income">
-                        <a href="#" class="nav-link">
-                            <div class="external-event bg-warning ui-draggable ui-draggable-handle"  style='font-size:small'>
-                                <p>تعديل/حذف</p>
-                            </div>
+              </li>
+            </ul>
 
-                        </a>
-                    </li>
-                </ul>
-            </li>
+              
+            
+          </li>
 
-
-            <li class="nav-item has-treeview" style="margin-left:35%">
-                <a href="#" class="nav-link" id="data">
-                    <i class="nav-icon fas fa-copy"></i>
-                    <p>الطلبيات <i class="fas fa-angle-left right"></i>
-                    </p>
-                </a>
-            </li>
-
-            <li class="nav-item has-treeview" style="margin-left:25%">
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+     التصنيفات
+                <i class="fas fa-angle-left right"></i>
+                <span class="badge badge-info right">2</span>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item" id="classfi-ar">
                 <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-copy"></i>
-                    <p>الاصناف<i class="fas fa-angle-left right"></i>
-                    </p>
+                  <i class="far fa-circle nav-icon"></i>
+                  <p> جديد </p>
                 </a>
-                <ul class="nav nav-treeview">
-                    <li class="nav-item" dir="rtl" id="classfi">
-                        <div class="external-event bg-success ui-draggable ui-draggable-handle" style="position: relative;">
-                            <i></i><a href="#" class="" style='font-size:small'></a></i>جديد
-                        </div>
-                        </a>
-                    </li>
-                    <li class="nav-item" id="ed-calss">
-                        <a href="#" class="nav-link">
-                            <div class="external-event bg-warning ui-draggable ui-draggable-handle"  style='font-size:small'>
-                                <p>تعديل/حذف صنف</p>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="nav-item has-treeview" style="margin-left:15%">
+              </li>
+              <li class="nav-item" id="ed-calss">
                 <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-copy"></i>
-                    <p>حالة المنتحات <i class="fas fa-angle-left right"></i>
-                    </p>
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>عرض التصنيفات </p>
                 </a>
-                <ul class="nav nav-treeview">
-                    <li class="nav-item" dir="rtl" id="pro-st">
-                        <div class="external-event bg-success ui-draggable ui-draggable-handle" style="position: relative;">
-                            <i></i><a href="#" class="" style='font-size:small'></a></i>جديد
-                        </div>
-                    </li>
-                    <li class="nav-item" id="ed-pros">
-                        <a href="#" class="nav-link">
-                            <div class="external-event bg-warning ui-draggable ui-draggable-handle"  style="font-size:small">
-                                <p>تعديل/حذف حالة</p>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-            </li>
+              </li>
+             
+            </ul>
 
-            <li class="nav-item has-treeview" style="margin-left:25%">
+              
+            
+          </li>
+
+              <li class="nav-item">
+                <a href="./index3.html" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>أخري </p>
+                </a>
+              </li>
+            </ul>
+          </li>
+      
+      
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-edit"></i>
+              <p>
+                التقارير 
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+             
+              <li class="nav-item">
+                <a href="#"id="month" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Normal Reports</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+      إدارة محتوي الموقع
+                <i class="fas fa-angle-left right"></i>
+                <span class="badge badge-info right">4</span>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item" id="contacts">
                 <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-copy" ></i>
-
-                    <p>الشركات <i class="fas fa-angle-left right"></i>
-                    </p>
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>جهات الاتصالات </p>
                 </a>
-                <ul class="nav nav-treeview">
-                    <li class="nav-item" dir="rtl" id="comp">
-                        <div class="external-event bg-success ui-draggable ui-draggable-handle" style="position: relative;">
-                            <i></i><a href="#" class="" style='font-size:small'></a></i>جديد
-                        </div>
-                    </li>
-                    <li class="nav-item" id="ed-comp">
-                        <a href="#" class="nav-link">
-                            <div class="external-event bg-warning ui-draggable ui-draggable-handle"  style='font-size:small'>
-                                <p>تعديل/حذف شركة</p>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="nav-item has-treeview" style="margin-left:10%">
-                <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-copy"></i>
-                    <p> تسكين المنتجات <i class="fas fa-angle-left right"></i>
-                    </p>
+              </li>
+              <li class="nav-item">
+                <a href="pages/layout/boxed.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>الحسابات </p>
                 </a>
-                <ul class="nav nav-treeview">
-                    <li class="nav-item" dir="rtl" id="st">
-                        <div class="external-event bg-success ui-draggable ui-draggable-handle" style="position: relative;">
-                            <i></i><a href="#" class="" style='font-size:small'></a></i>جديد
-                        </div>
-                    </li>
-                    <li class="nav-item" id="ed-st">
-                        <a href="#" class="nav-link">
-                            <div class="external-event bg-warning ui-draggable ui-draggable-handle"
-                                 style='font-size:small'>
-                                <p>تعديل /حذف </p>
-                            </div>
-                        </a>
+              </li>
+    
 
-                    </li>
-                </ul>
-            </li>
 
-            <li class="nav-item has-treeview" style="margin-left:10%">
-                <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-copy"></i>
-                    <p> قائمة التقارير<i class="fas fa-angle-left right"></i>
-                    </p>
+              <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+     اللغة 
+                <i class="fas fa-angle-left right"></i>
+                <span class="badge badge-info right">2</span>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item" id="">
+                <a href="language/ar" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p> العربية  </p>
                 </a>
-                <ul class="nav nav-treeview">
-                    <li class="nav-item" dir="rtl" id="month">
-                        <div class="external-event bg-success ui-draggable ui-draggable-handle"
-                             style="position: relative;">
-                            <i></i><a href="#" class="" style='font-size:small'></a></i>تقارير بناء علي الشهر السنة الاسبوع واليوم
-                        </div>
-                    </li>
-                    <li class="nav-item" id="derution">
-                        <a href="#" class="nav-link">
-                            <div class="external-event bg-success ui-draggable ui-draggable-handle"
-                                 style='font-size:small'>
-                                <p>تقارير بناء علي فترة زمنية</p>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
-
-
-
-
-
-
-
-
-            <li class="nav-item" dir="rtl" id="else" style="margin-left:30%">
-                <a href="#" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p> اخري</p>
+              </li>
+              <li class="nav-item" id="">
+                <a href="/language/en" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p> الانجليزية   </p>
                 </a>
-            </li>
-            </li>
+              </li>
+            </ul>
 
-            <li class="nav-item" dir="rtl" style="margin-left:30%">
-                <a href="/logout" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <span class="glyphicon glyphicon-log-out"></span> تسجيل الخروج
-                </a>
-            </li>
-        </ul>
-    </nav>
+              
+            
+          </li>
+
+          
     <!-- /.sidebar-menu -->
+</div>
+</aside>
+<div class="container">
+    <div>
+
+        @if($message=Session::get('status'))
+
+            <script type="text/javascript">
+
+                alert("تم الحفظ")
+                $.get('{{$message}}', function (data) {
+
+                    $("#card").html(data);
+
+                });        </script>
+    </div>
+    @endif
+        <div  style="margin-right:15%" id="card">
+        </div>
 </div>

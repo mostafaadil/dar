@@ -13,14 +13,9 @@
 
 
   /* pages Routs */
-  Route::get('language/{lang}', function ($lang) {
 
-    Session::put('locale', $lang);
+  Route::get('/language/{lang}','LnagController@index');
 
-     App::setlocale($lang);
-
-    return back();
-});
 Route::get('/car','CarsController@getCarsData');
 
 Route::get('/about-us','CarsController@aboutUs');
@@ -80,6 +75,14 @@ Route::get('/month','websiteController@monthreport');
 
 Route::post('/save','ProductController@store') ;
 Route::get('/inline-pro','ProductController@inlinePro' ) ;
+Route::get('/catogries/{id}','ProductController@byCat' ) ;
+
+
+
+Route::get('/inline-pro-ar','ProductController@inlineProar' ) ;
+Route::get('/edation-pro-en','ProductController@editDeleteen');
+
+
 Route::get('/new-product','ProductController@create' ) ;
 Route::get('/','ProductController@index') ;
 Route::get('/edation-pro','ProductController@editDelete');
@@ -95,6 +98,14 @@ Route::get('/deuration-pr-report/{date},{flag}','ProductController@getRecord') ;
 
 /*Products Catogires Routes */
 Route::get('/inline-proclas','ProductclassificationController@inlinePro' ) ;
+Route::get('/inline-proclasen','ProductclassificationController@inlineProen' ) ;
+
+
+
+Route::get('/inline-proclas-ar','ProductclassificationController@inlineProar' ) ;
+Route::get('/edation-pro-classification-en','ProductclassificationController@editDeleteen');
+
+
 Route::get('/new-pro-classification','ProductclassificationController@create' ) ;
 Route::post('/save-pro-classification','ProductclassificationController@store');
 Route::get('/edation-pro-classification','ProductclassificationController@editDelete');

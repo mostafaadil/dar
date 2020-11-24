@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use App\Contacts;
 use App\Productclassification;
 use Config;
 
@@ -21,6 +22,8 @@ class websiteController extends Controller
           $pro=array();
           $dogs=array();
         $dataArray=Productclassification::all();
+       $contets=Contacts::all();
+
         if(Config::get('app.locale')=='ar'){
 
             $pro=Product::all('arabic_name','arabic_discrption','imge_url');
@@ -33,21 +36,23 @@ class websiteController extends Controller
         elseif ( Config::get('app.locale') == 'en' )
         {
             
-            $pro=Product::all('arabic_name','arabic_discrption','imge_url');
+            $pro=Product::all();
 
             $dogs = Product::orderBy('id', 'desc')->take(5)->get();
 
         }
 
-        $pro=Product::all('arabic_name','arabic_discrption','imge_url');
+        $pro=Product::all();
 
         $dogs = Product::orderBy('id', 'desc')->take(5)->get();
 
         
       //  return json_encode($pro);
+
+     //  dd($pro);
     
 
-        return view('furn.index',compact('pro','dataArray','dogs'));
+        return view('furn.index',compact('pro','dataArray','dogs','contets'));
     }
 
     /**

@@ -33,6 +33,7 @@
 <script src="plugins/jquery/jquery.min.js"></script>
 </head>
 <div class="card-body" width="100%">
+<br>
     <div id="table" class="table-editable">
     <form  action="/save" method="post"  class="from-group" enctype="multipart/form-data">
 {{Csrf_field()}}

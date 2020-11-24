@@ -38,6 +38,10 @@ class ContactsController extends Controller
     public function store(Request $request)
     {
         //
+         $saveContant=new Contacts;
+         $saveContant->phone_number=request('phone_number');
+         $saveContant->save();
+
     }
 
     /**

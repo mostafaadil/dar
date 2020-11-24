@@ -37,17 +37,23 @@
   </form>
 
   <div>
-    <table class="table table-bordered text regular" dir="rtl" style="  margin: 0px auto;"
+    <table class="table table-bordered text regular" style="  margin: 0px auto;"
            id="laravel_crud">
       <thead>
 
       </thead>
       <thead>
       <tr>
-        <th class="text regular">الرقم</th>
-        <th class="regular text" id="txt_name">اسم المنتج</th>
-        <th class="regular text" id="txt_name">صورة المنتج </th>
-        <th class=" regular text"> تاريخ الدخول للمخزن</th>
+        <th class="text regular">Number </th>
+        <th class="regular text" id="txt_name"> english name</th>
+        <th class="regular text" id="txt_name"> arabic name  </th>
+        <th class="regular text" id="txt_name"> english  discraption    </th>
+        <th class="regular text" id="txt_name"> arabic   discraption    </th>
+        <th class="regular text" id="txt_name"> catogries    </th>
+        <th class="regular text" id="txt_name"> proudact image     </th>
+
+
+
         <th class="regular  text"> التصنيف</th>
 
         <th class="regular text">عمليات
@@ -57,21 +63,23 @@
       <tbody id="users-crud" {{$counter=1}}>
       @foreach($pro as $u_info)
         <tr id="user_id_{{ $u_info->id }}">
-          <td class="text regular">{{$counter++ }}</td>
-          <td class=" text regular">{{ $u_info->arabic_name }}</td>
+        <td class="text regular">{{$counter++ }}</td>
+
+        <td class=" text regular">{{ $u_info->arabic_name }}</td>
           <td class=" text regular">{{ $u_info->english_name }}</td>
           <td class=" text regular">{{ $u_info->arabic_discrption }}</td>
           <td class=" text regular">{{ $u_info->english__discrption }}</td>
+          <td class=" regular text">{{ $u_info->productclassification->calssfcation_type_english }}</td>
+
 
 
           <td class="text regular"><img src="{{asset($u_info->imge_url)}}" style="width:100px;hight:20%"></td>
-          <td class=" regular text">{{ $u_info->productclassification->calssfcation_type }}</td>
 
 
           <td class=" text regular"><a href="javascript:void(0)" id="edit-user" data-id="{{ $u_info->id }}"
-                                       class="btn btn-info text regular">تعديل</a></td>
+                                       class="btn btn-info text regular">edit</a></td>
           <td class="regular text"><a href="javascript:void(0)" id="delete-user" data-id="{{ $u_info->id }}"
-                                      class="btn btn-danger delete-user text regular">حذف</a></td>
+                                      class="btn btn-danger delete-user text regular">delete</a></td>
         </tr>
       @endforeach
       </tbody>
@@ -125,7 +133,7 @@
                 <div class="col-sm-12">
 
                   <label for="name" style="margin-left:80%" class="col-sm-1control-label"> *تاريخ الدخول </label>
-               
+                  <input id="file" type="file" name="imge_url"  required  width="40%" class="form-control"/>
               </div>
 
 

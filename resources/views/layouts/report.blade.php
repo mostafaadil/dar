@@ -4,12 +4,7 @@
         <select class="form-control select2 select2-hidden-accessible" style="width: 60%;" data-select2-id="1"
                 tabindex="-1" aria-hidden="true" id="report">
             <option value="1" class="selected" data-select2-id="62">المنتجات</option>
-            <option value="2" class="selected" data-select2-id="3">الشركات</option>
-            <option value="3" class="selected" data-select2-id="63">الوارد</option>
-            <option value="4" class="selected" data-select2-id="64">الصادر</option>
-            <option value="5" class="selected" data-select2-id="65">التسكين</option>
             <option value="6" class="selected" data-select2-id="66">الاصناف</option>
-            <option value="7" class="selected" data-select2-id="67">حالات المنتجات</option>
         </select>
     </div>
     <div class="fc-right" style="margin-left: 80%">

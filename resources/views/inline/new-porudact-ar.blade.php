@@ -32,23 +32,28 @@
 <link rel="stylesheet" href="plugins/summernote/summernote-bs4.css">
 <script src="plugins/jquery/jquery.min.js"></script>
 </head>
-<div class="card-body" >
-    <div id="table" class="table-editable" style="margin-right:25%">
-    <form  action="/save" method="post"  class="from-group" enctype="multipart/form-data">
+<div class="col-md-12">
+<div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Bordered Table</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                  <div id="table" class="table table-bordered">
+    <form  action="/save" method="post"  class="from-control" enctype="multipart/form-data">
 {{Csrf_field()}}
-        <table class="table table-bordered table-responsive-md table-striped text-center" style="margin-right:25%">
+        <table class="table table-bordered table-responsive-md table-striped text-center"  dir="rtl"style="margin-right:25%">
             <thead>
                 <tr>
-                    <th class="text-center"> Producate  arabic name  </th>
-                    <th class="text-center">  Producate  english  name  </th>
-                    <th class="text-center">arabic discrption  </th>
-                    <th class="text-center">english   discrption </th>
-                    <th class="text-center"> catogries </th>
-
-                    <th class="text-center"> proudacts photo </th>
+                   <th> اسم المنتج بالعربية </th>
+                   <th> اسم المنتج بالانجليزية  </th>
+                   <th>الوصف بالعربية</th>
+                   <th>الوصف بالانجليزية </th>
+                   <th> التصنيف </th>
+                   <th> صورة المنتج  </th>
 
                     <td>
-                        <span class="table-add"><button type="button" class="btn btn-success btn-rounded btn-sm my-0" id="new_row"> add new proudact </button></span>
+                        <span class="table-add"><button type="button" class="btn btn-success btn-rounded btn-sm my-0"  class="form-control"  id="new_row"> إضافة  منتج جديد </button></span>
                     </td>
                 </tr>
             </thead>
@@ -59,7 +64,7 @@
         </table>
         <div class="row" >
             <center>
-                <button type="submit" class="btn btn-success btn-rounded btn-sm my-0" id="save">save</button>
+                <button type="submit" class="btn btn-success btn-rounded btn-sm my-0" id="save">حفظ</button>
            </center>
         </div>
        </form>
@@ -68,7 +73,7 @@
 
 <!-- Editable table -->
 <i style="display:none" id="cal">
-<select name="classfcation_id[]"  class="browser-default custom-select"> 
+<select name="classfcation_id[]"  style="width: 100px "class="browser-default custom-select"> 
 @foreach($classfcation as $data)
 <option value="{{$data->id}}">{{$data->calssfcation_type_english}}</option>
 @endforeach
@@ -78,15 +83,16 @@
 <script>
     var $pro_table = $('#table');
     var proTr = `<tr>
-                    <td class="pt-3-half" ><input type="text" placeholder="اسم المنتج" required name="arabic_name[]"require class="form-control"/></td>
-                    <td class="pt-3-half" ><input type="text" placeholder="اسم المنتج" required name="english_name[]"require class="form-control"/></td>
-                    <td class="pt-3-half" ><textarea  id="" cols="30" required name="arabic_discrption[]"   width="40%" rows="10"></textarea></td>
+    <th><input type="text"  placeholder="اسم المنتج" required name="arabic_name[]"require class="form-control"/></td>
+    <th><input type="text"  placeholder="اسم المنتج" required name="english_name[]"require class="form-control"/></td>
+    <th><div class="form-group w-100" ><textarea  id="" cols="30" required name="arabic_discrption[]" 
+                   " rows="10"  class="form-control"></textarea></div></td>
 
-                    <td class="pt-3-half" ><textarea  id="" cols="30" required name="english__discrption[]" width="40%"   rows="10"></textarea></td></td>
-                    <td class="pt-3-half" >`+$('#cal').html()+`</td>
-                    <td class="pt-3-half" ><input id="file" type="file" name="imge_url[]"  required  width="40%" class="form-control"></td>
+  <th><div class="form-group w-100"><textarea  id="" cols="30" required name="english__discrption[]"   rows="10"  class="form-control"></textarea></di</td>
+  <th>`+$('#cal').html()+`</td>
+  <th><input id="file" type="file" class="file" name="imge_url[]"  required   class="form-control"></td>
                     <td>
-                    <span class="table-remove"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0" >إزالة</button></span>
+                    <span class="table-remove"  class="form-control"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0" >إزالة</button></span>
                     </td>
                 </tr>`;
     $pro_table.on('click', '#new_row', function () {

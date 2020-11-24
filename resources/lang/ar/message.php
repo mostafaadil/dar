@@ -1,13 +1,18 @@
 <?php
 
 return [
-    'home'=>'الري',
+    'home'=>'الرئيسيه ',
     
-    'contacts'=>  ' contacts  ',
+    'contacts'=>  ' اتصل بنا   ',
     
-    'accounts'=> ' accounts',
+    'accounts'=> ' حساباتنا ',
     
-    'categories'=> ' categories  '
+    'categories'=> ' التصنيفات  ',
+    'arabic'=> 'العربية ',
+    'english'=> 'الانجليزية ',
+
+    'lang'=> 'اللغة'
+
     
     ];
 ?>

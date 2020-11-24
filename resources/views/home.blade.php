@@ -1,125 +1,303 @@
 @extends('layouts.app')
+<link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+<!-- JQVMap -->
+<link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css">
+<!-- Theme style -->
+<link rel="stylesheet" href="dist/css/adminlte.min.css">
+<!-- overlayScrollbars -->
+<link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+<!-- Daterange picker -->
+<link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
+<!-- summernote -->
+<link rel="stylesheet" href="plugins/summernote/summernote-bs4.css">
+<!-- Google Font: Source Sans Pro -->
 
-@section('content')
+<link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+<!-- Ionicons -->
+<meta name="csrf-token" content="{{csrf_token()}}">
 
-    <div class="mx-auto w-full">
-        <div>
-            <!-- Card stats -->
-            <div class="flex flex-wrap -mx-4">
-                <div class="w-full md:w-1/3 px-4">
-                    <div class="relative flex flex-col min-w-0 break-words bg-white rounded mb-6 xl:mb-0 shadow-lg">
-                        <div class="flex-auto p-4">
-                            <div class="flex flex-wrap">
-                                <div class="relative w-full pr-4 max-w-full flex-grow flex-1">
-                                    <h5 class="text-gray-500 uppercase font-bold text-xs">
-                                        New users
-                                    </h5>
-                                    <span class="font-semibold text-xl text-gray-800">
-                          2,356
-                        </span>
-                                </div>
-                                <div class="relative w-auto px-2 flex-initial">
-                                    <div
-                                        class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-orange-500">
-                                        <svg class="w-5 h-5" fill="none" stroke-linecap="round" stroke-linejoin="round"
-                                             stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path
-                                                d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
-                                        </svg>
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="text-sm text-gray-500 mt-4">
-                      <span class="text-red-500 mr-2">
-                        <i class="fas fa-arrow-down"></i> 3.48%
-                      </span>
-                                <span class="whitespace-no-wrap">
-                        Since last week
-                      </span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-full md:w-1/3 px-4">
-                    <div class="relative flex flex-col min-w-0 break-words bg-white rounded mb-6 xl:mb-0 shadow-lg">
-                        <div class="flex-auto p-4">
-                            <div class="flex flex-wrap">
-                                <div class="relative w-full pr-4 max-w-full flex-grow flex-1">
-                                    <h5 class="text-gray-500 uppercase font-bold text-xs">
-                                        Sales
-                                    </h5>
-                                    <span class="font-semibold text-xl text-gray-800">
-                          924
-                        </span>
-                                </div>
-                                <div class="relative w-auto px-2 flex-initial">
-                                    <div
-                                        class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-pink-500">
-                                        <svg class="w-5 h-5" fill="none" stroke-linecap="round" stroke-linejoin="round"
-                                             stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path
-                                                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
-                                        </svg>
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="text-sm text-gray-500 mt-4">
-                      <span class="text-orange-500 mr-2">
-                        <i class="fas fa-arrow-down"></i> 1.10%
-                      </span>
-                                <span class="whitespace-no-wrap">
-                        Since yesterday
-                      </span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-full md:w-1/3 px-4">
-                    <div class="relative flex flex-col min-w-0 break-words bg-white rounded mb-6 xl:mb-0 shadow-lg">
-                        <div class="flex-auto p-4">
-                            <div class="flex flex-wrap">
-                                <div class="relative w-full pr-4 max-w-full flex-grow flex-1">
-                                    <h5 class="text-gray-500 uppercase font-bold text-xs">
-                                        Performance
-                                    </h5>
-                                    <span class="font-semibold text-xl text-gray-800">
-                          49,65%
-                        </span>
-                                </div>
-                                <div class="relative w-auto px-2 flex-initial">
-                                    <div
-                                        class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-blue-500">
-                                        <svg class="w-5 h-5" fill="none" stroke-linecap="round" stroke-linejoin="round"
-                                             stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path
-                                                d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                                        </svg>
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="text-sm text-gray-500 mt-4">
-                      <span class="text-green-500 mr-2">
-                        <i class="fas fa-arrow-up"></i> 12%
-                      </span>
-                                <span class="whitespace-no-wrap">
-                        Since last month
-                      </span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<!-- Tempusdominus Bbootstrap 4 -->
+<link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+<!-- iCheck -->
+<link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+<!-- JQVMap -->
+<link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css">
+<!-- Theme style -->
+<link rel="stylesheet" href="dist/css/adminlte.min.css">
+<!-- overlayScrollbars -->
+<link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+<!-- Daterange picker -->
+<link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
+<!-- summernote -->
+<link rel="stylesheet" href="plugins/summernote/summernote-bs4.css">
+<script src="plugins/jquery/jquery.min.js"></script>
+
+<!-- Google Font: Source Sans Pro -->
+</head>
+
+
+@if (App::islocale('en'))
+@include('layouts/english-sidebar')
+@endif
+@if (App::islocale('ar'))
+@include('layouts/sidebar')
+@endif
+
+
+
+<!-- /.sidebar -->
+</aside>
+
+
+<div class="container">
+    <div>
+
+        @if($message=Session::get('status'))
+
+            <script type="text/javascript">
+
+                alert("تم الحفظ")
+                $.get('{{$message}}', function (data) {
+
+                    $("#card").html(data);
+
+                });        </script>
+    </div>
+    @endif
+        <div  style="margin-left:15%" class="col-md-12"  id="card">
         </div>
-    </div>
-
-    <div class="mt-12">
-
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
+</div>
 
 
+<script type="text/javascript">
+    $('#pro').click(function () {
+        $.get('/inline-pro', function (data) {
 
-@endsection
+            $("#card").html(data);
+
+        });
+    });
+
+
+    $('#pro-ar').click(function () {
+        $.get('/inline-pro-ar', function (data) {
+
+            $("#card").html(data);
+
+        });
+    });
+    
+    $('#contacts').click(function () {
+        $.get('/contact/create', function (data) {
+
+            $("#card").html(data);
+
+        });
+    });
+
+
+
+
+    $.get('/all-costmers', function (data) {
+        //alert("hhuu");
+        $('#costmers').html(data);
+    });
+
+    $.get('/all-income', function (data) {
+        //alert("hhuu");
+        $('#pre').html(data);
+    });
+
+
+    $.get('/all-reserv', function (data) {
+        //alert("hhuu");
+        $('#res').html(data);
+    });
+
+
+    $.get('/all-soothings', function (data) {
+        //alert("hhuu");
+        $('#soot').html(data);
+    });
+
+
+    $('#else').click(function () {
+        $.get('/pricing', function (data) {
+
+            $("#card").html(data);
+
+        });
+    });
+
+    $('#ed-pro').click(function () {
+        $.get('/edation-pro', function (data) {
+
+            $("#card").html(data);
+
+        });
+
+    });
+
+    $('#ed-pro-en').click(function () {
+        $.get('/edation-pro-en', function (data) {
+
+            $("#card").html(data);
+
+        });
+
+    });
+
+    $('#income').click(function () {
+        $.get('/inline-income', function (data) {
+
+            $("#card").html(data);
+
+        });
+
+    });
+    $('#derution').click(function () {
+        $.get('/derution', function (data) {
+
+            $("#card").html(data);
+
+        });
+
+    });
+    $('#month').click(function () {
+        $.get('/month', function (data) {
+
+            $("#card").html(data);
+
+        });
+
+    });
+
+
+    $('#ed-income').click(function () {
+        $.get('/edation-income', function (data) {
+
+            $("#card").html(data);
+
+        });
+
+    });
+
+
+    $("#close").click(function () {
+
+        $('#showMe').hide();
+
+    });
+
+    $('#classfi_en').click(function () {
+        $.get('/inline-proclasen', function (data) {
+
+            $("#card").html(data);
+
+        });
+
+    });
+
+    $('#classfi-ar').click(function () {
+        $.get('/inline-proclas-ar', function (data) {
+
+            $("#card").html(data);
+
+        });
+
+    });
+
+
+    $('#ed-calss').click(function () {
+        $.get('/edation-pro-classification', function (data) {
+
+            $("#card").html(data);
+
+        });
+
+    });
+    $('#ed-calss-en').click(function () {
+        $.get('/edation-pro-classification-en', function (data) {
+
+            $("#card").html(data);
+
+        });
+
+    });
+
+
+    $('#pro-st').click(function () {
+        $.get('/inline-prost', function (data) {
+            $("#card").html(data);
+        });
+
+    });
+    $('#ed-pros').click(function () {
+        $.get('/edation-prostatus', function (data) {
+            $("#card").html(data);
+        });
+
+    });
+
+    $('#comp').click(function () {
+        $.get('/inline-company', function (data) {
+            $("#card").html(data);
+        });
+
+    });
+    $('#ed-comp').click(function () {
+        $.get('/edation-comp', function (data) {
+            $("#card").html(data);
+        });
+
+    });
+
+
+    $('#st').click(function () {
+        $.get('/inline-soothing', function (data) {
+            $("#card").html(data);
+        });
+
+    });
+    $('#ed-st').click(function () {
+        $.get('/edation-soothing', function (data) {
+            $("#card").html(data);
+        });
+
+    });
+
+    $('#data').click(function () {
+        $.get('/show-resevre', function (data) {
+            $("#card").html(data);
+        });
+
+    });
+
+</script>
+
+
+<script src="plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- overlayScrollbars -->
+<script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.js"></script>
+
+<!-- OPTIONAL SCRIPTS -->
+<script src="dist/js/demo.js"></script>
+
+<!-- PAGE PLUGINS -->
+<!-- jQuery Mapael -->
+<script src="plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
+<script src="plugins/raphael/raphael.min.js"></script>
+<script src="plugins/jquery-mapael/jquery.mapael.min.js"></script>
+<script src="plugins/jquery-mapael/maps/usa_states.min.js"></script>
+<!-- ChartJS -->
+<script src="plugins/chart.js/Chart.min.js"></script>
+<!-- PAGE SCRIPTS -->
+<script src="dist/js/pages/dashboard2.js"></script>
+
+
+
+

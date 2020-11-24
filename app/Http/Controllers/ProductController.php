@@ -12,6 +12,8 @@ use App\Incoming;
 use App\Produactstatus;
 use App\Soothing;
 use App\Strategies;
+use App\Contacts;
+
 
 
 class ProductController extends Controller
@@ -30,6 +32,13 @@ class ProductController extends Controller
 
         $classfcation = Productclassification::all();
         return view('inline.new-porudact', compact('pro', 'classfcation'));
+    }
+    public function inlineProar()
+    {
+        $pro = Product::all();
+
+        $classfcation = Productclassification::all();
+        return view('inline.new-porudact-ar', compact('pro', 'classfcation'));
     }
 
 
@@ -115,6 +124,34 @@ class ProductController extends Controller
 
 
     }
+    
+
+    
+    public function editDeleteen()
+    {
+        $pro = Product::all();
+
+        $classfcation = Productclassification::all();
+
+        return view('edit-delete-pro-en', compact('pro', 'classfcation'));
+    }
+
+    
+    public function byCat($id)
+    {
+        $dataArray=Productclassification::all();
+        $contets=Contacts::all();
+        $dogs=array();
+
+        $pro = Product::where('classfcation_id',$id)->get();
+
+        $dogs = Product::orderBy('id', 'desc')->take(5)->get();
+
+        return view('furn.cats', compact('pro','dataArray','dogs','contets'));
+    }
+
+
+
 
 
     public function editDelete()
@@ -475,18 +512,17 @@ class ProductController extends Controller
         $name = $request->input('arabic_name');
         $english_name = $request->input('english_name');
 
-        $dis = $request->input('dis');
+        
+
+      //  $dis = $request->input('dis');
         $editid = $request->input('user_id');
 
 
-        if ($name != '' && $enter_date != '') {
-            $data = array('arabic_name' => $name, "english_name" => $english_name);
+            $data = array('arabic_name' => $name, "english_name" => $english_name,'arabic_discrption'=> $request->input('arabic_discrption'),'english__discrption'=> $request->input('english__discrption'));
             // Call updateData() method of Page Model
             $user = Product::where('id', $editid)->update($data);
             return json_encode('تم التعديل');
-        } else {
-            echo json_encode('Fill all fields.');
-        }
+        
     }
 
 
@@ -494,16 +530,22 @@ class ProductController extends Controller
     public function updateItem(Request $request)
     {
 
+        
         $name = $request->input('arabic_name');
         $english_name = $request->input('english_name');
-
-        $dis = $request->input('dis');
-        $editid = $request->input('user_id');
-
-        $data = array('arabic_name' => $name,'english_name'=>$english_name, "dis" => $dis);
-        // Call updateData() method of Page Model
-        $user = Product::where('id', $editid)->update($data);
-        return json_encode('تم التعديل');
+                   /* $the_imge = time() . '.' . $image->getClientOriginalExtension();
+                 $destinationPath = public_path('/images');
+                 $employee = Product::find($id);
+                 $file_old = $path.$employee->imge_url;
+                 unlink($file_old);
+                 $image = $request->file('imge_url');
+                 $image->move($destinationPath, $the_imge); */
+                
+                 $data = array('arabic_name' => $name, "english_name" => $english_name,'arabic_discrption'=> $request->input('arabic_discrption'),'english__discrption'=> $request->input('english__discrption'));
+           // Call updateData() method of Page Model
+           $user = Product::where('id', $request->input('user_id'))->update($data);
+           return json_encode('تم التعديل');
+        
     }
 
     /**

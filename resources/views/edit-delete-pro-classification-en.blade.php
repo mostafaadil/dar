@@ -15,9 +15,11 @@
      <table class="table table-bordered table-striped dataTable" role="grid" aria-describedby="example1_info" id="laravel_crud">
             <thead>
             <tr>
-                <td class="text regular">الرقم</td>
-                <td class="regular text">نوع تصنيف المنتج</td>
-                <td class="regular text">عمليات</td>
+                <td class="text regular">Number</td>
+                <td class="regular text"> catogrie  english  name </td>
+                <td class="regular text"> catogrie arabic  name </td>
+
+                <td class="regular text">opration</td>
             </tr>
             </thead>
             <tbody id="users-crud" {{$counter=1}}>
@@ -31,9 +33,9 @@
                      data-id="{{ $u_info->id }}"
                      data-name="{{ $u_info->calssfcation_type}}" 
                 
-                     class="btn btn-info text regular">تعديل</a></td>
+                     class="btn btn-info text regular">edit </a></td>
                     <td class="regular text">
-                    <a href="javascript:void(0)" id="delete-user" data-id="{{ $u_info->id }}" class="btn btn-danger delete-user text regular">حذف</a></td>
+                    <a href="javascript:void(0)" id="delete-user" data-id="{{ $u_info->id }}" class="btn btn-danger delete-user text regular">delete</a></td>
                 </tr>
             @endforeach
             </tbody>
@@ -61,17 +63,16 @@
                         <input type="hidden" name="id" id="user_id">
 
                         <div class="form-group">
-                            <label for="name" class="col-sm-2 control-label">الاسم بالعربية </label>
+                        <lable for="exampleInputEmail1"> catogries arabic name </label>
 
                             <div class="col-sm-12">
-
                                 <input type="text" class="form-control" id="calssfcation_type_arabic" name="calssfcation_type_arabic"
                                        placeholder="Enter Name" value="" maxlength="50" required="">
                             </div>    
 
 
-                            <div class="col-sm-12">
-                            <label for="exampleInputEmail1">الاسم بالانجليزية     </label>
+                            <div class="form-group">
+                            <lable for="exampleInputEmail1"> catogries english name </label>
 
                                 <input type="text" class="form-control" id="calssfcation_type_english" name="calssfcation_type_english"
                                        placeholder="Enter Name" value="" maxlength="50" required="">
