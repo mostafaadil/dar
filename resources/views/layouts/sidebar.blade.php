@@ -220,7 +220,12 @@
             </ul>
 
               
-            
+            <li class="nav-item" dir="rtl" style="margin-left:30%">
+                <a href="/logout" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <span class="glyphicon glyphicon-log-out"></span> تسجيل الخروج
+                </a>
+            </li>
           </li>
 
           
@@ -235,11 +240,7 @@
             <script type="text/javascript">
 
                 alert("تم الحفظ")
-                $.get('{{$message}}', function (data) {
-
-                    $("#card").html(data);
-
-                });        </script>
+                  </script>
     </div>
     @endif
         <div  style="margin-right:15%" id="card">

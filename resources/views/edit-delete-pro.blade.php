@@ -45,12 +45,13 @@
       <thead>
       <tr>
         <th class="text regular">الرقم</th>
-        <th class="regular text" id="txt_name">اسم المنتج</th>
-        <th class="regular text" id="txt_name">صورة المنتج </th>
-        <th class=" regular text"> تاريخ الدخول للمخزن</th>
-        <th class="regular  text"> التصنيف</th>
+        <th class="regular text" id="txt_name">اسم المنتج بالعربية </th>
+        <th class="regular text" id="txt_name">اسم المنتج بالانجليزية </th>
+        <th class="regular text" id="txt_name">وصف  المنتج بالعربية </th>
+        <th class="regular text" id="txt_name">وصف  المنتج بالانجليزية </th>
+        <th class="regular text" id="txt_name">التصنيف </th>
 
-        <th class="regular text">عمليات
+        <th class="regular text" id="txt_name">صورة المنتج </th>
         </td>
       </tr>
       </thead>
@@ -63,9 +64,9 @@
           <td class=" text regular">{{ $u_info->arabic_discrption }}</td>
           <td class=" text regular">{{ $u_info->english__discrption }}</td>
 
+          <td class=" regular text">{{ $u_info->productclassification->calssfcation_type_arabic }}</td>
 
           <td class="text regular"><img src="{{asset($u_info->imge_url)}}" style="width:100px;hight:20%"></td>
-          <td class=" regular text">{{ $u_info->productclassification->calssfcation_type }}</td>
 
 
           <td class=" text regular"><a href="javascript:void(0)" id="edit-user" data-id="{{ $u_info->id }}"
@@ -115,6 +116,7 @@
               </div>
 
               <label for="name" style="margin-left:80%" class="col-sm-1control-label"> *اسم االشركة</label>
+
               <select name="classfcation_id" dir="rtl" class="browser-default custom-select">
 
                 @foreach($classfcation as $data)
@@ -233,7 +235,7 @@
           $("#btn-save").click(function () {
               $.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
               var data = ($('#userForm').serialize());
-              var id = $('#user_id').val;
+            //  var id = $('#user_id').val;
               // var alldata=data+"id="+id;
               alert(data);
 

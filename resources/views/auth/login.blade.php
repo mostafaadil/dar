@@ -4,9 +4,9 @@
     <div class="min-h-screen flex items-center">
         <div class="bg-white w-full max-w-lg rounded-lg shadow overflow-hidden mx-auto">
             <div class="py-4 px-6">
-                <div class="text-center font-bold text-gray-700 text-3xl">Brand</div>
-                <div class="mt-1 text-center font-bold text-gray-600 text-xl">Welcome Back</div>
-                <div class="mt-1 text-center text-gray-600">Login or Register</div>
+                <div class="text-center font-bold text-gray-700 text-3xl"></div>
+                <div class="mt-1 text-center font-bold text-gray-600 text-xl"> </div>
+                <div class="mt-1 text-center text-gray-600">  </div>
                 <form action="{{ route('login') }}" method="POST">
                     @csrf
                     <div class="mt-4 w-full">

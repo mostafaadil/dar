@@ -43,7 +43,7 @@ Route::get('/edit/{id}','CarsController@edit');
 Route::post('cars/update','CarsController@update');
 Route::get('/car-book','CarsController@index');
 
-Route::get('/index','websiteController@index');
+Route::get('/','websiteController@index');
 
 
 
@@ -85,7 +85,6 @@ Route::get('/edation-pro-en','ProductController@editDeleteen');
 
 
 Route::get('/new-product','ProductController@create' ) ;
-Route::get('/','ProductController@index') ;
 Route::get('/edation-pro','ProductController@editDelete');
 Route::get('/delete-pro/{id}', ['uses' => 'ProductController@destroy']);
 Route::get('/edit-pro/{id}', ['uses' => 'ProductController@edit']);
@@ -93,6 +92,9 @@ Route::post('/update-pro', ['uses' => 'ProductController@updateItem']);
 Route::get('/search-pro/{name},{flag}', ['uses' => 'ProductController@search']);
 Route::get('/prodactsReport/{date},{flag}','ProductController@prodactsReport') ;
 Route::get('/deuration-pr-report/{date},{flag}','ProductController@getRecord') ;
+
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
 
 /**/
 

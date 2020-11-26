@@ -14,7 +14,14 @@ use App\Soothing;
 use App\Strategies;
 use App\Contacts;
 
+/* code uthoer Mostafa adil  
+from Logiciel @company 26-11-2020
 
+
+
+@ all right reserved fro logiliec company 
+
+*/
 
 class ProductController extends Controller
 {
@@ -508,43 +515,81 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
 
+        /*
 
-        $name = $request->input('arabic_name');
-        $english_name = $request->input('english_name');
-
+        The code blow is for upadeing pro data  :-
+      
+        1- handeling  the  data 
+       
+        2- set it as permaerts 
+       
+        3- after that cheak the codtions of update
+       
+        4- upadte the data sesscfuly  and send upadeing flag within the route 
         
+        */    
+            $editid = $request->input('user_id');
 
-      //  $dis = $request->input('dis');
-        $editid = $request->input('user_id');
 
-
-            $data = array('arabic_name' => $name, "english_name" => $english_name,'arabic_discrption'=> $request->input('arabic_discrption'),'english__discrption'=> $request->input('english__discrption'));
-            // Call updateData() method of Page Model
+            $data = array(
+                'arabic_name'         =>       $request->input('arabic_name'), 
+            
+                'english_name'        =>       $request->input('user_id'),
+             
+               'arabic_discrption'    =>       $request->input('arabic_discrption'),
+             
+               'english__discrption'  =>       $request->input('english__discrption'),
+             
+               'classfcation_id'      =>       $request->input('classfcation_id')
+            );
+           
+           
             $user = Product::where('id', $editid)->update($data);
+            
             return json_encode('تم التعديل');
         
     }
 
 
-    // Update record
+  //upadte as a choies one 
+
     public function updateItem(Request $request)
     {
-
+        /*
+        The code blow is for upadeing pro data  
+      
+        1-handeking tahe data 
+       
+        2- set it as permaerts 
+       
+        3-after that cheak the codtions of update
+       
+        4-upadte the data sessfuly  and send upadeing flag within the route 
         
-        $name = $request->input('arabic_name');
-        $english_name = $request->input('english_name');
-                   /* $the_imge = time() . '.' . $image->getClientOriginalExtension();
-                 $destinationPath = public_path('/images');
-                 $employee = Product::find($id);
-                 $file_old = $path.$employee->imge_url;
-                 unlink($file_old);
-                 $image = $request->file('imge_url');
-                 $image->move($destinationPath, $the_imge); */
-                
-                 $data = array('arabic_name' => $name, "english_name" => $english_name,'arabic_discrption'=> $request->input('arabic_discrption'),'english__discrption'=> $request->input('english__discrption'));
-           // Call updateData() method of Page Model
-           $user = Product::where('id', $request->input('user_id'))->update($data);
-           return json_encode('تم التعديل');
+        */
+        
+    
+               
+            $data = array(
+                'arabic_name'         =>       $request->input('arabic_name'), 
+            
+                'english_name'        =>       $request->input('user_id'),
+             
+               'arabic_discrption'    =>       $request->input('arabic_discrption'),
+             
+               'english__discrption'  =>       $request->input('english__discrption'),
+             
+               'classfcation_id'      =>       $request->input('classfcation_id')
+            );
+           
+            $user = Product::where('id', $request->input('user_id'))->update($data);
+          
+            if($user=1){
+
+                return json_encode('تم التعديل');
+
+            }
+          
         
     }
 

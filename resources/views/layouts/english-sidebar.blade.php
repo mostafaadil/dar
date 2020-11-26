@@ -223,7 +223,12 @@
 
 
               
-            
+<li class="nav-item" >
+                <a href="/logout" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <span class="glyphicon glyphicon-log-out"></span>  log out 
+                </a>
+            </li>
           </li>
 
           

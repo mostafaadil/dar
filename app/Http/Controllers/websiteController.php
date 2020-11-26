@@ -44,7 +44,7 @@ class websiteController extends Controller
 
         $pro=Product::orderBy('id', 'desc')->take(4)->get();
 
-        $dogs = Product::orderBy('id', 'desc')->take(5)->get();
+        $dogs = Product::all();
 
         
       //  return json_encode($pro);
@@ -57,7 +57,8 @@ class websiteController extends Controller
     }
 
     public function getImages(){
-        $pro=Product::orderBy('id')->take(2)->get();
+        $pro=Product::orderBy(Product::raw('RAND()'))->take(2)->get();
+
         return json_encode($pro);
 
     }

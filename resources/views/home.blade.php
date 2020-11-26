@@ -64,7 +64,7 @@
                 });        </script>
     </div>
     @endif
-        <div  style="margin-left:15%" class="col-md-12"  id="card">
+    <div  style="margin-left:15%" id="card">
         </div>
 </div>
 
